@@ -8,6 +8,7 @@ int main()
     MY_ROUT_TABLE rou_1;
     MY_ROUT_TABLE rou_2;
 
+    pthread_mutex_init(&(rou_1.rout_table_lock),NULL);
     init_rout_table(&rou_1,6);
     init_rout_table(&rou_2,4);
 ////////////
