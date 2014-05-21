@@ -347,7 +347,8 @@ void client_start_queue(int *sock_fd,char * name,char dest_table[10][20])
     init_rout_table(the_rout_table,host_ID);
     //为路由表赋值
     //这个地方要手动填写 或者整个配置文件 自己看着办吧
-    the_rout_table->rout_table[0][0]=2;
+    create_rout_table(the_rout_table);
+   /* the_rout_table->rout_table[0][0]=2;
     the_rout_table->rout_table[0][1]=3;
     the_rout_table->rout_table[0][2]=4;
 
@@ -355,7 +356,7 @@ void client_start_queue(int *sock_fd,char * name,char dest_table[10][20])
     the_rout_table->rout_table[1][1]=4;
     the_rout_table->rout_table[1][2]=5;
 
-    the_rout_table->curr_size=2;
+    the_rout_table->curr_size=2;*/
     //.................................
     //初始化路由表互斥量
     pthread_mutex_init(&(the_rout_table->rout_table_lock),NULL);
